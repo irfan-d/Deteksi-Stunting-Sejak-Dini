@@ -1,4 +1,4 @@
 # Deteksi-Stunting-Sejak-Dini
 
-## API:
+## Flask-API prediksi:
 https://situmbuhprediction.up.railway.app/
