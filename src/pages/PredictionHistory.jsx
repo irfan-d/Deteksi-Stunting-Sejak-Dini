@@ -42,8 +42,7 @@ export default function PredictionHistory() {
           className="border border-[var(--color-darkgrey)] rounded-md px-3 py-2 w-full max-w-xs focus:outline-none focus:ring-2 focus:ring-[var(--color-blue)]"
         />
       </div>
-      {/* <div className="w-full overflow-x-auto"> */}
-      <div className="w-full">
+      <div className="w-full overflow-x-auto">
         <table className="min-w-full table-auto border-collapse rounded-lg overflow-hidden">
           <thead>
             <tr className="text-sm sm:text-base bg-[var(--color-blue)] text-white text-left">
