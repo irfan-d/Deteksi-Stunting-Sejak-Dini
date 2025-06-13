@@ -25,7 +25,9 @@ export default function Stunting() {
                         Anak Anda terdeteksi memiliki risiko stunting. Segera konsultasikan hasil ini dengan tenaga kesehatan atau bidan untuk mendapatkan penanganan dan saran yang tepat. Pastikan anak mendapatkan asupan gizi seimbang, imunisasi lengkap, serta pemantauan tumbuh kembang secara rutin. Jangan ragu untuk mencari informasi dan dukungan lebih lanjut demi kesehatan optimal buah hati Anda.
                     </p>
                     <div className="flex justify-center mt-8">
-                        <button className="inline-flex items-center border-1 text-black px-5 py-2.5 rounded-md text-sm md:text-base hover:bg-[var(--color-darkgrey)]">
+                        <button className="inline-flex items-center border-1 text-black px-5 py-2.5 rounded-md text-sm md:text-base hover:bg-[var(--color-darkgrey)]"
+                                onClick={() => navigate('/daftar-bidan')}
+                        >
                             Konsultasi dengan bidan
                             <img  src={arrowRightBlack} className="ml-2 h-4 md:h-6" />
                         </button>
