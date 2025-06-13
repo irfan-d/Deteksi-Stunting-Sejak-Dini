@@ -83,6 +83,42 @@ Model disimpan dalam berbagai format untuk deployment:
 
 ---
 
+## 🚀 Cara Menjalankan Proyek (Singkat)
+
+1. **Clone repository**
+   ```bash
+   git clone https://github.com/irfan-d/Deteksi-Stunting-Sejak-Dini.git
+   cd Deteksi-Stunting-Sejak-Dini
+````
+
+2. **Install & jalankan Front-End**
+
+   ```bash
+   cd frontend
+   npm install
+   npm run dev
+   ```
+
+3. **Install & jalankan Back-End**
+
+   ```bash
+   cd ../backend
+   npm install
+   npm run dev
+   ```
+
+4. **Konfigurasi file `.env`**
+   Tambahkan variabel Supabase, URL model Flask (jika terpisah), dan JWT Secret di direktori backend.
+
+5. **Jalankan model Flask (opsional)**
+   Jalankan `app.py` dari folder `ml-api` dan pastikan file `model.h5`, `scaler.pkl`, dll tersedia.
+
+6. **Testing & akses aplikasi**
+   Frontend: `http://localhost:5173`
+   Backend: `http://localhost:3000`
+
+---
+
 ## 📝 Lisensi
 
 Proyek ini dikembangkan untuk keperluan edukasi dalam program **Capstone Project - Dicoding Coding Camp 2025** dan tidak diperuntukkan untuk penggunaan medis profesional secara langsung tanpa supervisi.
