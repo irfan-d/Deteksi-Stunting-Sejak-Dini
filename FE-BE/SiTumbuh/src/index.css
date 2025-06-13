@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@layer base {
+  html {
+    font-family: "Poppins", sans-serif;
+  }
+}
+
+:root {
+  --color-blue: #4FC3F7;
+  --color-green: #A5D6A7;
+  --color-yellow: #FFF176;
+  --color-red: #EF5350;
+  --color-white: #FFFFFF;
+  --color-grey: #F5F5F5;
+  --color-darkgrey: #808080;
+  --color-black: #000000;
+  --radius-5xl: 3rem;
+}
+
+.scrollbar-hide {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Webkit */
+}
