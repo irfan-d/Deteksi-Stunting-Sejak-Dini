@@ -58,7 +58,7 @@ const handleSubmit = async (e) => {
                         <span className="text-2xl font-bold text-sky-400">SiTumbuh</span>
                     </div>
                     <h2 className="text-3xl font-bold text-sky-400 mb-2">Daftar Akun</h2>
-                    <p className="mb-6 text-gray-500">Lorem ipsum dolor sit amet consectetur</p>
+                    <p className="mb-6 text-gray-500">Silakan isi data Anda untuk membuat akun baru</p>
                     <form className="space-y-4" onSubmit={handleSubmit}>
                     <div>
                         <label className="block mb-1 text-sm">Nama Lengkap</label>
