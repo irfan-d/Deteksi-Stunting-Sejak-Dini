@@ -89,7 +89,7 @@ Model disimpan dalam berbagai format untuk deployment:
    ```bash
    git clone https://github.com/irfan-d/Deteksi-Stunting-Sejak-Dini.git
    cd Deteksi-Stunting-Sejak-Dini
-````
+
 
 2. **Install & jalankan Front-End**
 
