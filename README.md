@@ -2,7 +2,7 @@
 
 # 📘 Situmbuh API Documentation
 
-API untuk aplikasi Situmbuh. Mendukung fitur autentikasi, manajemen profil, prediksi stunting, alamat, rekomendasi dokter/bidan, dan artikel edukasi.
+API untuk aplikasi Situmbuh. Mendukung fitur autentikasi, manajemen profil (termasuk foto profil), prediksi stunting, alamat, rekomendasi dokter/bidan, testimoni, contact us, dan artikel edukasi.
 
 ---
 
@@ -79,7 +79,19 @@ Authorization: Bearer <token>
 Authorization: Bearer <token>
 ```
 **Response:** `200 OK`  
-**Returns:** Data profil user
+**Returns:** Data profil user, contoh:
+```json
+{
+  "user_id": "uuid",
+  "email": "user@email.com",
+  "full_name": "Nama User",
+  "gender": "Male",
+  "birth_date": "1990-01-01",
+  "phone_number": "081234567890",
+  "job": "Student",
+  "foto_url": "https://.../profile.jpg"
+}
+```
 
 ---
 
@@ -96,7 +108,8 @@ Authorization: Bearer <token>
   "gender": "Male",
   "birth_date": "1990-01-01",
   "phone_number": "081234567890",
-  "job": "Student"
+  "job": "Student",
+  "foto_url": "https://.../profile.jpg"
 }
 ```
 **Response:** `200 OK`
@@ -117,7 +130,8 @@ Authorization: Bearer <token>
   "gender": "Female",
   "birth_date": "1995-05-05",
   "phone_number": "089876543210",
-  "job": "Engineer"
+  "job": "Engineer",
+  "foto_url": "https://.../profile.jpg"
 }
 ```
 **Response:** `200 OK`
@@ -157,7 +171,7 @@ Authorization: Bearer <token>
 ```
 Authorization: Bearer <token>
 ```
-**Body:** *(disesuaikan kebutuhan input model, contoh:)*  
+**Body:**  
 ```json
 {
   "child_name": "Budi",
@@ -258,7 +272,91 @@ Authorization: Bearer <token>
 Authorization: Bearer <token>
 ```
 **Response:** `200 OK`  
-**Returns:** Daftar bidan/dokter dari database
+**Returns:** Daftar bidan/dokter dari database, contoh:
+```json
+[
+  {
+    "id": "uuid",
+    "nama": "dr. Markus",
+    "pendidikan": "Spesialis Anak",
+    "tempat_praktik": "RS Pondok Indah",
+    "rating": 5,
+    "foto_url": "https://.../bidan.jpg",
+    "latitude": -6.2,
+    "longitude": 106.8,
+    "harga": 400000,
+    "jadwal_praktik": "Senin–Jumat, 09.00–12.00 WIB",
+    "no_str": "1234567890"
+  }
+]
+```
+
+---
+
+### 📄 Get Bidan Detail
+
+**Endpoint:** `GET /bidan/{id}`  
+**Header:**
+```
+Authorization: Bearer <token>
+```
+**Response:** `200 OK`  
+**Returns:** Detail bidan sesuai id
+
+---
+
+## ⭐ Testimoni Bidan
+
+### ➕ Add Testimoni
+
+**Endpoint:** `POST /testimonies`  
+**Header:**
+```
+Authorization: Bearer <token>
+```
+**Body:**
+```json
+{
+  "bidan_id": "uuid-bidan",
+  "content": "Bidan sangat ramah dan profesional.",
+  "rating": 5
+}
+```
+**Response:** `201 Created`
+
+---
+
+### 📋 Get Testimoni Bidan
+
+**Endpoint:** `GET /bidan/{id}/testimonies`  
+**Header:**
+```
+Authorization: Bearer <token>
+```
+**Response:** `200 OK`  
+**Returns:** Daftar testimoni untuk bidan tersebut
+
+---
+
+## 📬 Contact Us
+
+### Kirim Pesan
+
+**Endpoint:** `POST /contact-us`  
+**Header:**
+```
+Authorization: Bearer <token>
+Content-Type: application/json
+```
+**Body:**
+```json
+{
+  "name": "Nama User",
+  "email": "user@email.com",
+  "message": "Isi pesan"
+}
+```
+**Response:** `201 Created`
 
 ---
 
@@ -277,6 +375,6 @@ Authorization: Bearer <token>
 ---
 
 > 🔐 Semua endpoint (kecuali `/register`, `/login`, dan `/`) membutuhkan header `Authorization: Bearer <token>`.  
-> Untuk gambar bidan, gunakan field `foto_url` pada response `/bidan`.
+> Untuk gambar bidan dan user, gunakan field `foto_url` pada response.
 
 ---
